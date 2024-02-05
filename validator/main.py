@@ -11,7 +11,7 @@ from guardrails.validator_base import (
 )
 
 
-@register_validator(name="extracted-summary-sentences-match", data_type="string")
+@register_validator(name="guardrails/extracted_summary_sentences_match", data_type="string")
 class ExtractedSummarySentencesMatch(Validator):
     """Validates that the extracted summary sentences match the original text
     by performing a cosine similarity in the embedding space.
