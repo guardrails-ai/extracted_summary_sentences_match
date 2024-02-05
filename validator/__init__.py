@@ -1,3 +1,3 @@
-from .main import RegexMatch
+from .main import ExtractedSummarySentencesMatch
 
-__all__ = ["RegexMatch"]
+__all__ = ["ExtractedSummarySentencesMatch"]

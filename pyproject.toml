@@ -1,7 +1,7 @@
 [project]
-name = "regexmatch"
+name = "extracted_summary_sentences_match"
 version = "0.0.0"
-description = "Template repo for Guardrails Hub validators."
+description = "Validates that the extracted summary sentences match the original text by performing a cosine similarity in the embedding space."
 authors = [
     {name = "Guardrails AI", email = "contact@guardrailsai.com"}
 ]
