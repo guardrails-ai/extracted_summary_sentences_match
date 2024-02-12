@@ -86,14 +86,15 @@ guard.parse("""
 """)
 ```
 
-## API Ref
+## API Reference
 
 `__init__`
 
 - `threshold` - The minimum cosine similarity to be considered similar. Default to 0.7.
     Other parameters: Metadata
 
-`__call__
+`__call__`
+
 - `filepaths` *List[str]* - A list of strings that specifies the filepaths for any documents that should be used for asserting the summary's similarity.
 - `document_store` *DocumentStoreBase, optional* - The document store to use during validation. Defaults to EphemeralDocumentStore.
 - `vector_db` *VectorDBBase, optional* - A vector database to use for embeddings. Defaults to Faiss.
