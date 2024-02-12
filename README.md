@@ -14,8 +14,7 @@ This validator checks that sentences in a generated summary match the original t
 
 ### Intended use
 
-- Primary intended uses: This validator is only useful when performing summarization.
-- Out-of-scope use cases: If the summary is correct but is an abstractive summary, this validator will give false negatives.
+This validator is only useful when performing summarization. If the summary is correct but is an abstractive summary, this validator will give false negatives.
 
 ### Resources required
 
