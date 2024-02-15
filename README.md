@@ -23,7 +23,7 @@ This validator is only useful when performing summarization. If the summary is c
 ## Installation
 
 ```bash
-$ gudardrails hub install hub://guardrails/extracted_summary_sentences_match
+$ guardrails hub install hub://guardrails/extracted_summary_sentences_match
 ```
 
 ## Usage Examples
