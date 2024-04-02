@@ -18,7 +18,7 @@ This validator is only useful when performing summarization. If the summary is c
 
 ### Resources required
 
-- Dependencies: `faiss`, `openai`
+- Dependencies: `faiss`, `openai`, `sqlalchemy`
 
 ## Installation
 
