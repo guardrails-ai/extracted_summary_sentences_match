@@ -1,4 +1,4 @@
-import contextvars
+import os
 import re
 from typing import Any, Callable, Dict, Optional
 
@@ -9,6 +9,7 @@ from guardrails.validator_base import (
     Validator,
     register_validator,
 )
+from guardrails.stores.context import get_call_kwarg
 
 
 @register_validator(name="guardrails/extracted_summary_sentences_match", data_type="string")
@@ -84,15 +85,8 @@ class ExtractedSummarySentencesMatch(Validator):
             )
         filepaths = metadata["filepaths"]
 
-        kwargs = {}
-        context_copy = contextvars.copy_context()
-        for key, context_var in context_copy.items():
-            if key.name == "kwargs" and isinstance(kwargs, dict):
-                kwargs = context_var
-                break
-
-        api_key = kwargs.get("api_key")
-        api_base = kwargs.get("api_base")
+        api_key = get_call_kwarg("api_key") or os.environ.get("OPENAI_API_KEY")
+        api_base = get_call_kwarg("api_base") or os.environ.get("OPENAI_API_BASE")
 
         store = self._instantiate_store(metadata, api_key, api_base)
 

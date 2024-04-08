@@ -9,8 +9,15 @@ license = {file = "LICENSE"}
 readme = "README.md"
 requires-python = ">= 3.8"
 dependencies = [
-    "rstr",
-    "guardrails-ai>=0.3.2",
-    "pydantic>=2.4.2",
-    "pytest"
+    "guardrails-ai>=0.4.2",
+    "faiss-cpu",
+    "openai",
+    "sqlalchemy"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pyright",
+    "pytest",
+    "ruff"
 ]
