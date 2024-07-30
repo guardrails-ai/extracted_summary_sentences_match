@@ -1,7 +1,6 @@
 ## Overview
 
 | Developed by | Guardrails AI |
-| --- | --- |
 | Date of development | Feb 15, 2024 |
 | Validator type | Summarization |
 | Blog |  |
@@ -16,9 +15,13 @@ This validator checks that sentences in a generated summary match the original t
 
 This validator is only useful when performing summarization. If the summary is correct but is an abstractive summary, this validator will give false negatives.
 
-### Resources required
+### Requirements
 
-- Dependencies: `faiss`, `openai`, `sqlalchemy`
+* Dependencies:
+    - `faiss`
+    - `openai`
+    - `sqlalchemy`
+    - guardrails-ai>=0.4.0
 
 ## Installation
 
@@ -85,7 +88,7 @@ guard.parse("""
 """)
 ```
 
-## API Reference
+# API Reference
 
 **`__init__(self, on_fail="noop")`**
 <ul>
@@ -101,7 +104,7 @@ Initializes a new instance of the Validator class.
 
 <br/>
 
-**`__call__(self, value, metadata={}) → ValidationOutcome`**
+**`validate(self, value, metadata={}) -> ValidationOutcome`**
 
 <ul>
 
@@ -126,4 +129,3 @@ Note:
     | `embedding_model` | Optional[EmbeddingBase] | The embeddig model to use. Defaults to OpenAIEmbedding. | None |
 
 </ul>
-
